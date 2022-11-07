@@ -1,7 +1,7 @@
-import { ExpenceItem } from "../Components/ExpenceItem"
+import { ExpenseItem } from "./ExpenseItem"
 
-export const Home = () => {
-    const expences = [
+export const Expenses = () => {
+    const Expenses = [
         {
             id: 'e1',
             title: 'Toilet Paper',
@@ -25,7 +25,7 @@ export const Home = () => {
     ];
     return (
         <div className=" container mx-auto w-1/2 p-5  border-white border rounded-3xl bg-gray-800 flex flex-col justify-around gap-5">
-            {expences.map(expence => <ExpenceItem key={expence.id} expence={expence} />)}
+            {Expenses.map(Expense => <ExpenseItem key={Expense.id} Expense={Expense} />)}
         </div>
     )
 }
