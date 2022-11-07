@@ -32,24 +32,24 @@ export const NewExpense = () => {
             }
         })
     }
-    /* format in localstorage
-    const Expenses = {
-        2002: [{
-            title: 'subkhir',
-            amount: '123',
-            date: ''
-        }],
-        2003: [{
-            title: '',
-            amount: '',
-            date: ''
-        }]
-    }
-    */
+
     const addNewExpence = (e) => {
         e.preventDefault()
         const year = userInput.date.slice(0, 4)
         const _expenses = { ...expenses }
+        /* format in localstorage
+        const Expenses = {
+        2002: [{
+            title: 'subkhir',
+            amount: '123',
+            date: ''
+            }],
+        2003: [{
+            title: '',
+            amount: '',
+            date: ''
+            }]
+        } */
         if (!(_expenses[year])) {
             _expenses[year] = [{
                 id: Date.now(),
@@ -65,11 +65,12 @@ export const NewExpense = () => {
                 date: userInput.date
             })
         }
-        setUserInput({
+        const _userInput = {
             title: '',
             amount: '',
             date: ''
-        })
+        }
+        setUserInput(_userInput)
         setExpenses(_expenses)
 
     }
