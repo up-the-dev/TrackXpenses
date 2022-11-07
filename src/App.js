@@ -5,14 +5,11 @@ import { Home } from './pages/Home';
 import { ExpensesContext } from './ExpensesContext';
 
 function App() {
-  const [expenses, setExpenses] = useState({})
+  const [expenses, setExpenses] = useState(() => {
+    return JSON.parse(localStorage.getItem('expenses')) || {}
+  })
   useEffect(() => {
-    const expenses = window.localStorage.getItem('Expenses')
-    setExpenses(JSON.parse(expenses))
-  }, [])
-  useEffect(() => {
-    console.log(expenses)
-    window.localStorage.setItem('Expenses', JSON.stringify(expenses))
+    window.localStorage.setItem('expenses', JSON.stringify(expenses))
   }, [expenses])
 
   return (

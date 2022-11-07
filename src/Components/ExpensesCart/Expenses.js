@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { ExpensesContext } from "../../ExpensesContext";
 import { ExpenseItem } from "./ExpenseItem"
 
 export const Expenses = () => {
+    const { expenses, setExpenses } = useContext(ExpensesContext)
+    console.log(expenses)
     const Expenses = [
         {
             id: 'e1',

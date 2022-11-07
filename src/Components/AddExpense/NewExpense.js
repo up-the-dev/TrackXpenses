@@ -52,6 +52,7 @@ export const NewExpense = () => {
         const _expenses = { ...expenses }
         if (!(_expenses[year])) {
             _expenses[year] = [{
+                id: Date.now(),
                 title: userInput.title,
                 amount: userInput.amount,
                 date: userInput.date
