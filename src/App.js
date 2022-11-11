@@ -8,14 +8,15 @@ function App() {
   const [expenses, setExpenses] = useState(() => {
     return JSON.parse(localStorage.getItem('expenses')) || {}
   })
+  const [filteredYear, setFilteredYear] = useState('')
   useEffect(() => {
     window.localStorage.setItem('expenses', JSON.stringify(expenses))
   }, [expenses])
 
   return (
-    <ExpensesContext.Provider value={{ expenses, setExpenses }}>
+    <ExpensesContext.Provider value={{ expenses, setExpenses, filteredYear, setFilteredYear }}>
       <Home />
-    </ExpensesContext.Provider>
+    </ExpensesContext.Provider >
   )
 }
 
