@@ -1,8 +1,8 @@
 import { useContext, useState } from "react"
 import { ExpensesContext } from "../../ExpensesContext"
 
-export const NewExpense = () => {
-    const { expenses, setExpenses } = useContext(ExpensesContext)
+export const NewExpense = (props) => {
+    const { expenses, setExpenses, setFilteredYear } = useContext(ExpensesContext)
     const [userInput, setUserInput] = useState({
         title: '',
         amount: '',
@@ -72,7 +72,8 @@ export const NewExpense = () => {
         }
         setUserInput(_userInput)
         setExpenses(_expenses)
-
+        setFilteredYear(year)
+        props.changeEditMode()
     }
 
     return (
@@ -88,12 +89,12 @@ export const NewExpense = () => {
                 </div>
                 <div>
                     <label className=" font-medium">Date</label>
-                    <input className="ml-12 w-1/2 text-black rounded-lg text-center py-1" type={'date'} min='2019-01-01' max='2025-01-01' onChange={changeDate} required />
+                    <input className="ml-12 w-1/2 text-black rounded-lg text-center py-1" type={'date'} min='2021-01-01' max='2023-12-31' onChange={changeDate} required />
                 </div>
                 <div className=" text-center">
+                    <button type="submit" onClick={props.changeEditMode} className="bg-rose-900 px-4 py-1 text-white font-semibold border rounded-lg mx-4" >Cancel</button>
                     <button type="submit" className="bg-rose-900 px-4 py-1 text-white font-semibold border rounded-lg" >Add Expense</button>
                 </div>
-
             </form >
         </div >
     )
