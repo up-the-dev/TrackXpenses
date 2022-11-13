@@ -5,10 +5,10 @@ import { Home } from './pages/Home';
 import { ExpensesContext } from './ExpensesContext';
 
 function App() {
+  const [filteredYear, setFilteredYear] = useState('')
   const [expenses, setExpenses] = useState(() => {
     return JSON.parse(localStorage.getItem('expenses')) || {}
   })
-  const [filteredYear, setFilteredYear] = useState('')
   useEffect(() => {
     window.localStorage.setItem('expenses', JSON.stringify(expenses))
   }, [expenses])
