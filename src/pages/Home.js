@@ -14,6 +14,7 @@ export const Home = () => {
                 isEditing ? <NewExpense changeEditMode={changeEditMode} /> : <button className="bg-rose-900 px-4 py-1 text-white font-semibold border rounded-lg mx-4" onClick={changeEditMode}>Add New Expense</button>
             }
             <Expenses />
+            <span className="text-white bg-slate-500 underline underline-offset-8 text-sm italic font-extrabold shadow shadow-rose-600 p-2">MADE WITH ❤️ BY UMESH </span>
         </div>
     )
 }
