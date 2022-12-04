@@ -5,7 +5,7 @@ const Chart = (props) => {
     const totalMaximum = Math.max(...dataPointValues);
 
     return (
-        <div className=' p-1 border-2 rounded-md bg-rose-300 text-center flex justify-around h-40'>
+        <div className=' p-3 border-2 rounded-md bg-rose-300 text-center flex justify-around h-40'>
             {props.dataPoints.map((dataPoint) => (
                 <ChartBar
                     key={dataPoint.label}

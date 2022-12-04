@@ -26,7 +26,6 @@ export const ExpenseItem = (props) => {
             delete _expenses[year]
         }
         setExpenses(_expenses)
-
     }
 
     return (

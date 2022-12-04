@@ -21,7 +21,8 @@ export const Expenses = () => {
                 })
             }
             {filterExpense.length === 0 ?
-                <p className="text-center text-white text-xl font-semibold">No Expenses Found !  Please Add first</p> :
+                <div className="flex items-center justify-center gap-4"><img src="notFound.png" className="w-1/6" alt="ExpenseNotAvailable" />
+                    <p className="text-center text-white text-md bg-slate-600 p-2 border-y font-semibold">NO EXPENSE FOUND !<br />  PLEASE ADD FIRST</p> </div> :
                 filterExpense.map((Exp) => {
                     return Exp[1].map((e) => {
                         return < ExpenseItem key={e.id} Expense={e} />;
